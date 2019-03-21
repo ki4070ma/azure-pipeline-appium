@@ -20,9 +20,12 @@ steps:
     sleep 60
   displayName: 'Set up Docker-Android'
 
+- task: ShellScript@2
+  inputs:
+    scriptPath: script.sh
+
 - script: |
     python -m pip install pipenv
     pipenv install
-    adb devices
     pipenv run python app_simple.py
   displayName: 'Run tests'
