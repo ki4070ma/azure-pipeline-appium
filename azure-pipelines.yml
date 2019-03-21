@@ -23,5 +23,6 @@ steps:
 - script: |
     python -m pip install pipenv
     pipenv install
+    adb devices
     pipenv run python app_simple.py
   displayName: 'Run tests'
